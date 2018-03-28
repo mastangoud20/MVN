@@ -6,7 +6,12 @@ pipeline {
 
 		steps {
 			
+			step {
+			
+			
 			mvn clean compile
+			
+			}
 				
 			}		
 			
