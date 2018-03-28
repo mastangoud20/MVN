@@ -1,45 +1,43 @@
 pipeline {
      agent any
+	 tools {
+        maven 'Maven 3.5.2'
+        jdk 'jdk8'
+    }
 
 	stages {
-		stage ( 'Compile Stage') {
+		stage ('Compile Stage') {
 
 		steps {
-			
-		 step {
-			
-			vn clean compile
+					
+			sh 'mvn clean compile'
 			
 			}
 				
 		  }
-		}
-	}	
 		
-
-		stage ( 'Testing Stage') {
+	
+		stage ('Testing Stage') {
 
 		steps {
-			withMaven(maven : 'maven-3.5.2') {
-			mvn test
+			
+			sh 'mvn test'
 				
 			}
 		   }		
 			
-		}
+		
 
-			stage ( 'Deploy Stage') {
+			stage ('Deploy Stage') {
 
-		step {
-			withMaven(maven : 'maven-3.5.2') {
-			mvn deploy
+		steps {
+			
+			sh 'mvn deploy'
 				
 			}
 		   }		
-			
-		}
-
-           }
+		}	
+	}
 		
 
 	
