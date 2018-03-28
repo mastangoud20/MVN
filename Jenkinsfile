@@ -6,7 +6,7 @@ Pipeline {
 
 		steps{
 			withMaven(maven : 'maven-3.5.2'){
-			sh 'mvn clean compile'
+			mvn clean compile
 				
 			}
 		   }		
@@ -17,7 +17,7 @@ Pipeline {
 
 		steps{
 			withMaven(maven : 'maven-3.5.2'){
-			sh 'mvn test'
+			mvn test
 				
 			}
 		   }		
@@ -28,7 +28,7 @@ Pipeline {
 
 		steps{
 			withMaven(maven : 'maven-3.5.2'){
-			sh 'mvn deploy'
+			mvn deploy
 				
 			}
 		   }		
