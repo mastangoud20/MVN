@@ -6,16 +6,16 @@ pipeline {
 
 		steps {
 			
-			step {
+		 step {
 			
-			
-			mvn clean compile
+			vn clean compile
 			
 			}
 				
-			}		
-			
+		  }
 		}
+	}	
+		
 
 		stage ( 'Testing Stage') {
 
@@ -30,7 +30,7 @@ pipeline {
 
 			stage ( 'Deploy Stage') {
 
-		steps {
+		step {
 			withMaven(maven : 'maven-3.5.2') {
 			mvn deploy
 				
@@ -40,5 +40,6 @@ pipeline {
 		}
 
            }
+		
 
 }	
