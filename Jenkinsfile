@@ -1,11 +1,11 @@
-Pipeline {
+pipeline {
      agent any
 
 	stages {
-		stage ( 'Compile Stage'){
+		stage ( 'Compile Stage') {
 
-		steps{
-			withMaven(maven : 'maven-3.5.2'){
+		steps {
+			withMaven(maven : 'maven-3.5.2') {
 			mvn clean compile
 				
 			}
@@ -13,10 +13,10 @@ Pipeline {
 			
 		}
 
-		stage ( 'Testing Stage'){
+		stage ( 'Testing Stage') {
 
-		steps{
-			withMaven(maven : 'maven-3.5.2'){
+		steps {
+			withMaven(maven : 'maven-3.5.2') {
 			mvn test
 				
 			}
@@ -24,10 +24,10 @@ Pipeline {
 			
 		}
 
-			stage ( 'Deploy Stage'){
+			stage ( 'Deploy Stage') {
 
-		steps{
-			withMaven(maven : 'maven-3.5.2'){
+		steps {
+			withMaven(maven : 'maven-3.5.2') {
 			mvn deploy
 				
 			}
@@ -35,6 +35,6 @@ Pipeline {
 			
 		}
 
-}
+           }
 
 }	
