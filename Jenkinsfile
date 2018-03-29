@@ -7,11 +7,37 @@ pipeline {
     }
 	
     stages {
-        stage('Build') {
+        stage('Clean') {
             steps {
                 
-		    echo "building"
+		    echo "cleaning"
 		    bat "mvn clean"
+            }
+        }
+	    
+	            stage('Install') {
+            steps {
+                
+		    echo "installing"
+		    bat "mvn install"
+            }
+        }
+	    
+	            stage('Compile') {
+            steps {
+                
+		    echo "Compile"
+		    bat "mvn Compile"
+		    
+		       }
+        }
+		    
+	        stage('Build') {
+            steps {
+                
+		    echo "Packaging"
+		    bat "mvn Package"
+         
             }
         }
 	
