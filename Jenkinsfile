@@ -1,10 +1,12 @@
 pipeline {
      agent any
 	
+	
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                  def mvnHome = tool 'M3'
+                  sh "${mvnHome}/bin/mvn clean package"
             }
         }
 	
