@@ -27,7 +27,7 @@ pipeline {
             steps {
                 
 		    echo "Compile"
-		    bat "mvn Compile"
+		    bat "mvn compile"
 		    
 		       }
         }
