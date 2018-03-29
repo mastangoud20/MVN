@@ -36,7 +36,7 @@ pipeline {
             steps {
                 
 		    echo "Packaging"
-		    bat "mvn Package"
+		    bat "mvn package"
          
             }
         }
