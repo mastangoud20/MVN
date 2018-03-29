@@ -7,6 +7,7 @@ pipeline {
             steps {
                 
 		    echo "building"
+		    sh "mvn clean"
             }
         }
 	
