@@ -7,7 +7,7 @@ pipeline {
 
 		steps {
 					
-			mvn clean compile
+			execute mvn clean compile
 			
 			}
 				
