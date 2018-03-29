@@ -1,39 +1,14 @@
 pipeline {
      agent any
 	
-
-	stages {
-		stage ('Compile Stage') {
-
-		steps {
-					
-			@mvn clean compile
-			
-			}
-				
-		  }
-		
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn -B -DskipTests clean package'
+            }
+        }
 	
-		stage ('Testing Stage') {
-
-		steps {
 			
-			sh 'mvn test'
-				
-			}
-		   }		
-			
-		
-
-			stage ('Deploy Stage') {
-
-		steps {
-			
-			sh 'mvn deploy'
-				
-			}
-		   }		
-		}	
 	}
 		
 
