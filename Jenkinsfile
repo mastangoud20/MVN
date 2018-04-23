@@ -36,7 +36,7 @@ pipeline {
 	        stage('Build') {
             steps {
                 
-		    echo "Packaging"
+		    echo "Packaging the file"
 		    bat "mvn package"
          
             }
